@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Dosis', sans-serif;
+}
+ul{
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    color: #000B52;
+    font-weight: bold;
+}
+nav{
+    background-color: #ffdc16;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-items{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+.nav-conteiner{
+    width: 70%;
+}
