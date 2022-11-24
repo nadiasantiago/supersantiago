@@ -4,7 +4,7 @@ import CartWidget from '../CartWidget/CartWidget';
 const NavBar = () => {
   return (
     <nav>
-        <div><img src="../../public/logo-super.png" alt="logo super santiago"/></div>
+        <div><img src={process.env.PUBLIC_URL + '/logo-super.png'} alt="logo super santiago"/></div>
         <div className='nav-conteiner'>
             <ul className='nav-items'>
                 <li><a href="#">TIENDA ONLINE</a></li>
