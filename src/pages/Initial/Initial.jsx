@@ -1,6 +1,6 @@
 import React from 'react'
-import NavBar from '../components/NavBar/NavBar';
-import ItemListConteiner from '../components/ItemListConteiner/ItemListConteiner';
+import NavBar from '../../components/NavBar/NavBar';
+import ItemListConteiner from '../../components/ItemListConteiner/ItemListConteiner';
 
 const Initial = () => {
   return (
