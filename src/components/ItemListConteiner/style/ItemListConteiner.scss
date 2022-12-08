@@ -1,5 +1,29 @@
-.bienvenida{
-    text-align: center;
-    padding-top: 10px;
-    
+.contenedor{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
 }
+.contenedor-producto{
+    width: 200px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    img{
+        height: 180px;
+        width: 180px;
+        object-fit:cover;
+        border-radius: 20px;
+    }
+    .descripcion{
+        padding: 5px;
+    }
+    .precio{
+        padding: 5px;
+        color: #000B52;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+}    
