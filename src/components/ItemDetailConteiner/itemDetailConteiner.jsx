@@ -1,15 +1,15 @@
-const ItemDetailConteiner = ({producto})=>{
-    // const {id} = useParams();
-    // const FilterCategory = new Promise((resolve) =>{
-    //     const productosFiltrados = Productos.filter((p)=>p.categoria==id);
-    //     resolve (productosFiltrados);
-    // })
+import { useParams } from "react-router-dom";
+import { Productos } from "../../mocks";
+import './style/ItemDetailConteiner.scss'
+const ItemDetailConteiner = ()=>{
+    const {id} = useParams();
+    const productoFiltrados = Productos.find((p)=>p.id==id);
     return(
         <div className='detalle-producto'>
-            <img src={producto.img}/>
-            <div>
-                <p className='descripcion'>{producto.nombre}</p>
-                <p className='precio'>${producto.precio}</p>
+            <img src={productoFiltrados.img}/>
+            <div className="detalle-descripcion">
+                <p className='descripcion'>{productoFiltrados.nombre}</p>
+                <p className='precio'>${productoFiltrados.precio}</p>
             </div>
         </div>
 )
