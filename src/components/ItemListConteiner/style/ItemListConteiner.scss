@@ -7,9 +7,10 @@
 }
 .contenedor-producto{
     width: 200px;
-    height: 250px;
+    height: 300px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin: 10px;
     img{
         height: 180px;

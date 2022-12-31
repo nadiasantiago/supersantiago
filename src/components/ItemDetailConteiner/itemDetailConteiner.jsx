@@ -1,17 +1,21 @@
-import { useParams } from "react-router-dom";
-import { Productos } from "../../mocks";
-import './style/ItemDetailConteiner.scss'
+import { doc, getDoc} from 'firebase/firestore'
+import { db } from '../../firebase/config';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import {ItemDetail} from "../ItemDetail/ItemDetail";
+
 const ItemDetailConteiner = ()=>{
+    const [item, setItem] = useState({});
     const {id} = useParams();
-    const productoFiltrados = Productos.find((p)=>p.id==id);
+
+    useEffect (()=>{
+        const itemRef = doc(db, 'item', id);
+        getDoc(itemRef).then((res) =>{
+            setItem ({id:res.id, ...res.data()})
+        })
+    }, [id])
     return(
-        <div className='detalle-producto'>
-            <img src={productoFiltrados.img}/>
-            <div className="detalle-descripcion">
-                <p className='descripcion'>{productoFiltrados.nombre}</p>
-                <p className='precio'>${productoFiltrados.precio}</p>
-            </div>
-        </div>
-)
-}
+    <ItemDetail producto={item}/>
+)}
+
 export default ItemDetailConteiner;
