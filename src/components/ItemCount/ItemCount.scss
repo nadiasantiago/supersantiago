@@ -1,0 +1,27 @@
+button{
+    background-color: #ffdc16;
+    color: #000B52;
+    border-color: #000B52;
+    border-radius: 5px;
+}
+.contador{
+    display: flex;
+    justify-content: space-between;
+    button{
+        width: 30px;
+    }
+    span{
+        padding: 0px 40px;
+    }
+    text-align: center;
+    background-color: rgb(223, 223, 223);
+}
+.addCart{
+    width: 100%;
+    padding: 2px;
+    margin-top: 2px;
+}
+
+.contenedor-contador{
+    width: 100%;
+}
