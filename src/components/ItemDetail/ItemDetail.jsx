@@ -16,6 +16,15 @@ export const ItemDetail = ({producto}) => {
         addProduct (producto, cantidad)
     }
 
+    const buttonOn = ()=>{
+        return(
+            <div className='button-detail'>
+                <button><Link to='/cart'>Terminar Compra</Link></button>
+                <button><Link to = '/'> Seguir Comprando</Link></button>
+            </div>
+        )
+    }
+
 
     return (
     <div className='detalle-producto'>
@@ -24,7 +33,7 @@ export const ItemDetail = ({producto}) => {
             <p className='descripcion'>{producto.nombre}</p>
             <p className='precio'>${producto.precio}</p>
             {
-            goToCart ? <Link to='/cart'>Terminar Compra</Link> : <ItemCount inicial={1} stock={5} onAdd={onAdd}/>
+            goToCart ?  buttonOn() : <ItemCount inicial={1} stock={5} onAdd={onAdd}/>
             }
 
         </div>
