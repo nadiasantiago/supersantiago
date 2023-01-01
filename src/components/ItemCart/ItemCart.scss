@@ -1,0 +1,13 @@
+.producto-cart{
+    display: flex;
+    flex-direction: column;
+}
+.cart-titulos{
+    display: flex;
+    flex-direction: row;
+
+    p{
+       padding: 5px;
+       border: 1px solid black;
+    }
+}
