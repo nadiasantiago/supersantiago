@@ -5,9 +5,13 @@
 .cart-titulos{
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 
     p{
        padding: 5px;
        border: 1px solid black;
+    }
+    .producto-nombre{
+        width: 40%;
     }
 }
