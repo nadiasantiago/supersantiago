@@ -6,6 +6,7 @@ import Brief from "./Brief";
 import CartForm from '../CartForm/CartForm'
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import './Checkout.scss'
 
 const MySwal = withReactContent(Swal)
 
@@ -38,7 +39,6 @@ const Checkout = () => {
     const showCartForm = () => {
         return new Promise((resolve) => {
             MySwal.fire({
-            title: "Datos de entrega",
             html: (<CartForm  onSubmit={(data) => {resolve(data)}}/>),
             showConfirmButton: false,
             });
@@ -135,7 +135,7 @@ return (
         <div>
             {
                 cart.map((product)=>{
-                    return <Brief producto={product} />
+                    return <Brief key={product.id} producto={product} />
                 })
             }
         </div>

@@ -3,6 +3,7 @@ import { Formik, Form, Field} from 'formik';
 
 const CartForm = ({onSubmit}) => (
     <div>
+        <h1 className='titulo-form'>Datos de entrega</h1>
         <Formik
             initialValues={{ nombre: '', apellido: '', email: '', password: '' }}
             validate={values => {
@@ -18,12 +19,13 @@ const CartForm = ({onSubmit}) => (
             }}
             onSubmit={onSubmit}>
             <Form className='formulario'>
-                <div className='formularios-input'><Field type="text" name="nombre" placeholder='Nombre'/></div>
-                <div className='formularios-input'><Field type="text" name="apellido" placeholder='Apellido'/></div>
-                <div className='formularios-input'><Field type="email" name="email" placeholder='example@email.com'/></div>
-                <div className='formularios-input'><Field type="number" name="telefono" placeholder='Teléfono' /></div>
-                <button type="submit">Enviar</button>
-                <button type="submit">Borrar</button>
+                <div><Field className='formulario-input' type="text" name="nombre" placeholder='Nombre'/></div>
+                <div><Field className='formulario-input' type="text" name="apellido" placeholder='Apellido'/></div>
+                <div><Field className='formulario-input' type="email" name="email" placeholder='example@email.com'/></div>
+                <div><Field className='formulario-input' type="number" name="telefono" placeholder='Teléfono' /></div>
+                <div><Field className='formulario-input' type="text" name="direccion" placeholder='Direccion' /></div>
+                <button className='btn-datosEntrega' type='submit'>Enviar</button>
+                <button className='btn-datosEntrega' type='reset'>Borrar</button>
             </Form>
         </Formik>
     </div>
