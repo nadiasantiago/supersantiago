@@ -1,0 +1,12 @@
+.item-cart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cart-vacio{
+    margin: 10px;
+    text-align: center;
+}
+.btn-finalizar, .btn-vaciar{
+    margin: 10px;
+}

@@ -8,7 +8,6 @@ import './ItemDetail.scss'
 
 export const ItemDetail = ({producto}) => {
     const [goToCart, setGoToCart] = useState (false)
-
     const {addProduct} = useCartContext();
 
     const onAdd = (cantidad)=>{
@@ -33,7 +32,7 @@ export const ItemDetail = ({producto}) => {
             <p className='descripcion'>{producto.nombre}</p>
             <p className='precio'>${producto.precio}</p>
             {
-            goToCart ?  buttonOn() : <ItemCount inicial={1} stock={5} onAdd={onAdd}/>
+            goToCart ?  buttonOn() : <ItemCount inicial={1} stock={producto.stock} onAdd={onAdd}/>
             }
 
         </div>

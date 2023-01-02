@@ -5,6 +5,7 @@ import ItemListConteiner from '../../components/ItemListConteiner/ItemListContei
 import ItemDetailConteiner from '../../components/ItemDetailConteiner/ItemDetailConteiner';
 import { Cart } from '../../components/Cart/Cart';
 import CartProvider from '../../context/CartContext';
+import Checkout from '../../components/Checkout/Checkout';
 
 
 const Initial = () => {
@@ -17,6 +18,7 @@ const Initial = () => {
           <Route exact path='/category/:id' element={<ItemListConteiner/>}/>
           <Route exact path='/item/:id' element={<ItemDetailConteiner/>}/>
           <Route exact path='/cart' element={<Cart/>}/>
+          <Route exact path='/checkout' element={<Checkout/>}/>
         </Routes>
       </CartProvider>
   </BrowserRouter>
