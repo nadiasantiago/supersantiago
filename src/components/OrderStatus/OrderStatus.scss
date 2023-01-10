@@ -1,0 +1,34 @@
+.status-titulos{
+    padding: 20px;
+    text-align: center;
+    color: #000B52;
+    h1{
+        font-size: 1rem;
+    }
+    
+}
+.order-datos{
+    p{
+        padding: 5px;
+    }
+    padding: 5px;
+}
+.conteiner-status{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.order-producto{
+    display: flex;
+    align-items: center;
+    img{
+        height: 70px;
+    }
+}
+.order-total{
+    padding: 10px;
+    color: #000B52;
+    font-size: 2rem;
+    font-weight: bold;
+}

@@ -3,6 +3,7 @@ import {doc, getDoc } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import { useParams,Link } from 'react-router-dom';
 import { db } from '../../firebase/config';
+import './OrderStatus.scss'
 
 
 const OrderStatus = () => {
@@ -19,11 +20,6 @@ const OrderStatus = () => {
       })
   }, [orderId])
 
-  const orderInexistente = () => {
-  }
-  const orderExistente = ()=>{
-  }
-
   return (
     orderData == undefined ? (
       <div>
@@ -31,30 +27,32 @@ const OrderStatus = () => {
         <Link to={'/'}>Volver a la tienda</Link>
       </div>
     ) : (
-      <div>
-        <div>
+      <div className='conteiner-status'>
+        <div className='status-titulos'>
           <h1>N° Orden: {orderId}</h1>
           <h2>¡Estamos trabajando en su pedido!</h2>
         </div>
-        <div>
+        <div className='order-datos'>
           <p>Cliente: {orderData.buyer.nombre} {orderData.buyer.apellido}</p>
           <p>Direccion de entrega: {orderData.buyer.direccion}</p>
           <p>Correo: {orderData.buyer.email}</p>
           <p>Telefono: {orderData.buyer.telefono}</p>
         </div>
         <div>
+          <h3>Productos:</h3>
           {
           orderData.items.map((item) => (
-            <div key={item.id}>
+            <div key={item.id} className='order-producto'>
               <img src={item.img} alt={item.name}/>
               <p>{item.name}</p>
-              <p>${item.precio} / {item.quantity} Un.</p>
+              <p>${item.precio} - </p>
+              <p>{item.quantity}un.</p>
             </div>
           ))
           }
         </div>
-        <div>
-          <p>Total: {orderData.total}</p>
+        <div className='order-total'>
+          <p>Total: ${orderData.total}</p>
         </div>
     </div>
     )
