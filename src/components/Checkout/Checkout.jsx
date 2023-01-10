@@ -2,7 +2,7 @@ import { collection, doc, serverTimestamp, writeBatch, getDocs, setDoc, query, w
 import { db } from '../../firebase/config';
 import { useNavigate } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
-import Brief from "./Brief";
+import Brief from "../Brief/Brief";
 import CartForm from '../CartForm/CartForm'
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
@@ -81,10 +81,10 @@ const Checkout = () => {
                 const stockDb = productData.stock;
 
                 const productInCart = cart.find((prodCart) => prodCart.id === prodDb.id);
-                const prodQty = productInCart?.cantidad;
+                const prodQ = productInCart?.cantidad;
 
-                if(stockDb >= prodQty) {
-                    batch.update(prodDb.ref, {stock: stockDb - prodQty}); 
+                if(stockDb >= prodQ) {
+                    batch.update(prodDb.ref, {stock: stockDb - prodQ}); 
                 } else{
                     outOfStock.push({id: prodDb.id, ...productData}); 
                 }
@@ -103,42 +103,41 @@ const Checkout = () => {
                     title: 'Ups!',
                     text: 'Nos quedamos sin stock!',
                     showConfirmButton: false,
-                    timer: 1500
+                    timer: 2000
                 })
             }
-
         } catch (error) {
             console.error(error);
         }
     }
+
     const afterBuy = (orderId) => {
         MySwal.fire({
           title: "¡Compra exitosa!",
           text: `Número de órden: ${orderId}`,
           icon: "success",
-          footer: "A continuación serás dirigido al detalle de la orden.",
           showConfirmButton: false,
         });
 
         setTimeout(() => {
             Swal.close();
             goTo(`/order/${orderId}`);
-          }, 5000);
+          }, 3000);
     };
 
 return (
-    <div>
+    <div className="contenedor-checkout">
         <h1>Checkout</h1>
-        <button onClick={handleBuy}>Confirmar Orden</button>
-        <p>Total: ${totalPrice()}</p>
-        <h3>Productos Selecionados:</h3>
-        <div>
+        <p className="checkout-total">Total: ${totalPrice()}</p>
+        <h3 className=''>Productos Selecionados:</h3>
+        <div className="checkout-productos">
             {
                 cart.map((product)=>{
                     return <Brief key={product.id} producto={product} />
                 })
             }
         </div>
+        <button className="confirmarOrden" onClick={handleBuy}>Confirmar Orden</button>
     </div>
 )}
 

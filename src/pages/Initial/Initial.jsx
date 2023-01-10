@@ -6,6 +6,7 @@ import ItemDetailConteiner from '../../components/ItemDetailConteiner/ItemDetail
 import { Cart } from '../../components/Cart/Cart';
 import CartProvider from '../../context/CartContext';
 import Checkout from '../../components/Checkout/Checkout';
+import OrderStatus from '../../components/OrderStatus/OrderStatus';
 
 
 const Initial = () => {
@@ -19,6 +20,8 @@ const Initial = () => {
           <Route exact path='/item/:id' element={<ItemDetailConteiner/>}/>
           <Route exact path='/cart' element={<Cart/>}/>
           <Route exact path='/checkout' element={<Checkout/>}/>
+          <Route exact path='/order/:orderId' element={<OrderStatus/>}/>
+
         </Routes>
       </CartProvider>
   </BrowserRouter>

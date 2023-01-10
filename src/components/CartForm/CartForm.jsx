@@ -5,7 +5,7 @@ const CartForm = ({onSubmit}) => (
     <div>
         <h1 className='titulo-form'>Datos de entrega</h1>
         <Formik
-            initialValues={{ nombre: '', apellido: '', email: '', password: '' }}
+            initialValues={{ nombre: '', apellido: '', email: '', direccion:'', telefono:'' }}
             validate={values => {
                 const errors = {};
                 if (!values.email) {

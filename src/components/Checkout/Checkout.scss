@@ -11,3 +11,50 @@
 .titulo-form{
     color: #000B52;
 }
+.contenedor-checkout{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.checkout-total{
+    color: #000B52;
+    padding: 10px;
+    font-size: 2rem;
+}
+.checkout-productos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.img-checkout{
+    height: 100px;
+    margin-right: 10px;
+}
+.descripcion-checkout{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #000B52;
+    border-radius: 10px;
+}
+.detalle-checkout{
+    p{
+        padding: 3px;
+        color: #000B52;
+    }
+    h2{
+        padding: 3px;
+        font-weight: bold;
+        font-size: 1rem;
+        color: #000B52;
+    }
+}
+.confirmarOrden{
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px;
+}
