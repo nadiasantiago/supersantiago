@@ -103,8 +103,12 @@ const Checkout = () => {
                     title: 'Ups!',
                     text: 'Nos quedamos sin stock!',
                     showConfirmButton: false,
-                    timer: 2000
                 })
+                setTimeout(() => {
+                    Swal.close();
+                    goTo(`/`);
+                  }, 2000);
+        
             }
         } catch (error) {
             console.error(error);
